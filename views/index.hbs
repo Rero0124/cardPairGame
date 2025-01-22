@@ -1,0 +1,13 @@
+{{#> layout title="카드 짝맞추기"}}
+  {{#*inline "body"}}
+    <div>
+      {{ message}}
+    </div>
+    <script>
+      const socket = io('/events');
+
+      socket.emit('events', 'Hello World!');
+
+    </script>
+  {{/inline}}
+{{/layout}}
