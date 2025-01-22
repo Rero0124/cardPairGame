@@ -5,12 +5,16 @@ import { join } from 'path';
 import handlebars, { partials } from 'handlebars';
 import fastifyView from '@fastify/view';
 import { IoAdapter } from '@nestjs/platform-socket.io';
+import { ConfigService } from '@nestjs/config';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
     new FastifyAdapter()
   );
+
+  const config = app.get(ConfigService);
 
   app.useStaticAssets({
     root: join(__dirname, '..', 'public'),
@@ -31,6 +35,9 @@ async function bootstrap() {
 
   app.useWebSocketAdapter(new IoAdapter(app));
   
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen({
+    port: config.get('app.port'),
+    host: config.get('app.host'),
+  });
 }
 bootstrap();
