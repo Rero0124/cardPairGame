@@ -1,0 +1,124 @@
+:root {
+  --nav-height: 60px;
+  --footer-height: 40px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background-color: #87CEEB; /* Medium blue background */
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #007bff; /* Blue background */
+  border-bottom: 1px solid #0056b3; /* Darker blue border */
+  height: var(--nav-height);
+}
+
+.nav .nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav .nav-list .right {
+  margin-left: auto;
+}
+
+.nav .nav-list li {
+  margin-right: 1rem;
+}
+
+.nav .nav-list li a {
+  text-decoration: none;
+  color: #ffffff; /* White text for contrast */
+}
+
+.nav .nav-list li a:hover {
+  color: #e0f7fa; /* Light blue on hover */
+}
+
+.nav .nav-list li a.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff; /* White underline for active link */
+}
+
+.section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.game-board {
+  display: grid;
+  gap: 1rem;
+  justify-content: center; /* Center the grid horizontally */
+  align-content: center; /* Center the grid vertically */
+  margin: auto; /* Center the game board */
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4x4 grid */
+  gap: 1rem;
+  justify-content: center; /* Center the cards horizontally */
+}
+
+.card {
+  width: 100px;
+  height: 150px;
+  background-color: #ffffff; /* White background for cards */
+  border: 1px solid #007bff; /* Blue border for cards */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--footer-height);
+  background-color: #007bff; /* Blue background */
+  border-top: 1px solid #0056b3; /* Darker blue border */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .card {
+    width: 80px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 992px) {
+  .card {
+    width: 70px;
+    height: 105px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 60px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 50px;
+    height: 75px;
+  }
+}

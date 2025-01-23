@@ -4,11 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{title}}</title>
+  <link rel="stylesheet" href="/public/css/root.css">
   <script src="/socket.io/socket.io.js"></script>
   <script src="/public/js/util.js"></script>
 </head>
 <body>
-  레이아웃입니당.
-  {{#> body}}{{/body}}
+  <div class="nav">
+    <div class="logo">
+      <a href="/">CPG</a>
+    </div>
+    <ul class="nav-list">
+      <li><a href="/">싱글플레이</a></li>
+      <li><a href="/">멀티플레이</a></li>
+      <li><a href="/leaderboard">리더보드</a></li>
+    </ul>
+    <ul class="nav-list right">
+      <li><a href="/login">로그인</a></li>
+      <li><a href="/register">회원가입</a></li>
+    </ul>
+  </div>
+  <div class="section">
+    {{#> main}}{{/main}}
+  </div>
+  <div class="footer">
+    <p>Footer</p>
+  </div>
 </body>
 </html>
