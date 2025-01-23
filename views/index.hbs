@@ -8,6 +8,13 @@
 
       socket.emit('events', 'Hello World!');
 
+      (async () => {
+        const { encryptedKey, encryptedIV, encryptedData } = await encryptAESWithRSA('신현수 멍청한놈')
+        const encryptedKeyBase64 = await arrayBufferToBase64(encryptedKey);
+        const encryptedIVBase64 = await arrayBufferToBase64(encryptedIV);
+        const encryptedDataBase64 = await arrayBufferToBase64(encryptedData);
+        request('POST', 'crypto/test', { encryptedKeyBase64, encryptedIVBase64, encryptedDataBase64 })
+      })();
     </script>
   {{/inline}}
 {{/layout}}
