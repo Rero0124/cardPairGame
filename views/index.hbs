@@ -4,7 +4,7 @@
       {{ message}}
     </div>
     <script>
-      const socket = io('/events');
+      const socket = io('/{{socket}}');
 
       socket.emit('events', 'Hello World!');
 

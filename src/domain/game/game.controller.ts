@@ -8,11 +8,11 @@ export class GameController {
 
   @Get('single')
   singleMap(@Res() res: FastifyReply) {
-    return res.view('/index.hbs', { isMulti: false });
+    return res.view('/index.hbs', { isMulti: false, socket: 'game' });
   }
 
   @Get('multi')
   multiMap(@Res() res: FastifyReply) {
-    return res.view('/index.hbs', { isMulti: true});
+    return res.view('/index.hbs', { isMulti: true });
   }
 }
