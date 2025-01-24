@@ -20,6 +20,20 @@
         <div class="card"></div>
       </div>
     </div>
+    <div class="sidebar">
+      <div class="user-list">
+        <p>사용자 리스트</p>
+        <ul>
+          <li>사용자 1</li>
+          <li>사용자 2</li>
+          <li>사용자 3</li>
+        </ul>
+      </div>
+      <div class="chat">
+        <div class="chat-messages"></div>
+        <input type="text" class="chat-input" placeholder="메시지를 입력하세요...">
+      </div>
+    </div>
     <script>
       const socket = io('/{{socket}}');
 

@@ -8,6 +8,6 @@ export class AppController {
 
   @Get()
   getHello (@Res() res: FastifyReply) {
-    return res.view('index.hbs', { message: this.appService.getHello(), socket: '' });
+    return res.view('game-multi.hbs', { message: this.appService.getHello(), socket: '' });
   }
 }

@@ -38,7 +38,7 @@ async function encryptAES(data) {
   return { key, iv, encryptedData };
 }
 
-async function encryptAESWithRSA(data) {
+async function encryptAESWithRSA(data, t) {
   const { key, iv, encryptedData } = await encryptAES(data);
   const rawPublicKey = (await request('GET', 'crypto/rsa/key')).key
   const publicKeyBuffer = Uint8Array.from(
@@ -53,7 +53,6 @@ async function encryptAESWithRSA(data) {
     ['encrypt']
   );
   const rawKey = await crypto.subtle.exportKey('raw', key)
-  console.log(btoa(iv))
   const encryptedKey = await crypto.subtle.encrypt(
     { name: 'RSA-OAEP' },
     publicKey,
@@ -64,5 +63,11 @@ async function encryptAESWithRSA(data) {
     publicKey,
     iv
   );
+  if(t === 'base64') {
+    const encryptedKeyBase64 = await arrayBufferToBase64(encryptedKey);
+    const encryptedIVBase64 = await arrayBufferToBase64(encryptedIV);
+    const encryptedDataBase64 = await arrayBufferToBase64(encryptedData);
+    return { encryptedKey: encryptedKeyBase64, encryptedIV: encryptedIVBase64, encryptedData: encryptedDataBase64 };
+  }
   return { encryptedKey, encryptedIV, encryptedData };
 }
