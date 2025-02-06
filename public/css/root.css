@@ -92,6 +92,83 @@ body {
   cursor: pointer;
 }
 
+.card-back {
+  content: '';
+  display: block;
+  width: 100px; /* Adjust as needed */
+  height: 150px; /* Adjust as needed */
+  background-color: #1e88e5; /* Blue color */
+  background-image: repeating-linear-gradient(
+    45deg,
+    #1e88e5,
+    #1e88e5 10px,
+    #1976d2 10px,
+    #1976d2 20px
+  );
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+}
+
+.card.spade::before,
+.card.club::before,
+.card.star::before,
+.card.circle::before,
+.card.square::before,
+.card.triangle::before,
+.card.heart::before,
+.card.diamond::before {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+/* Star shape */
+.card.star::before {
+  background-color: #ffeb3b; /* Yellow color */
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Circle shape */
+.card.circle::before {
+  background-color: #f44336; /* Red color */
+  border-radius: 50%;
+}
+
+/* Square shape */
+.card.square::before {
+  background-color: #4caf50; /* Green color */
+}
+
+/* Triangle shape */
+.card.triangle::before {
+  background-color: #2196f3; /* Blue color */
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+/* Heart shape */
+.card.heart::before {
+  background-color: #e91e63; /* Pink color */
+  clip-path: polygon(51% 40%, 44% 29%, 32% 23%, 21% 23%, 13% 29%, 9% 37%, 10% 44%, 15% 55%, 19% 62%, 26% 69%, 33% 77%, 39% 81%, 45% 86%, 49% 92%, 55% 89%, 63% 84%, 71% 78%, 79% 72%, 84% 65%, 84% 65%, 88% 57%, 90% 47%, 90% 37%, 87% 29%, 81% 24%, 75% 21%, 67% 21%, 61% 27%, 56% 34%);
+}
+
+/* Spade shape */
+.card.spade::before {
+  background-color: #000000; /* Black color */
+  clip-path: polygon(51% 13%, 42% 20%, 32% 29%, 24% 39%, 16% 47%, 11% 61%, 16% 69%, 27% 73%, 35% 69%, 45% 67%, 43% 77%, 36% 88%, 46% 87%, 58% 88%, 70% 86%, 61% 76%, 57% 66%, 67% 68%, 75% 70%, 81% 69%, 89% 65%, 90% 54%, 86% 45%, 79% 35%, 70% 28%, 61% 20%);
+}
+
+/* Club shape */
+.card.club::before {
+  background-color: #795548; /* Brown color */
+  clip-path: polygon(49% 13%, 39% 18%, 34% 26%, 38% 33%, 42% 37%, 45% 45%, 37% 44%, 29% 39%, 19% 39%, 16% 48%, 17% 58%, 25% 63%, 31% 70%, 39% 67%, 46% 63%, 45% 70%, 41% 78%, 36% 88%, 46% 87%, 58% 88%, 65% 88%, 66% 77%, 62% 72%, 58% 66%, 66% 68%, 77% 73%, 85% 69%, 90% 61%, 89% 52%, 86% 45%, 80% 42%, 72% 42%, 64% 45%, 64% 38%, 72% 35%, 73% 28%, 69% 19%, 64% 16%, 56% 14%);
+}
+
+/* Diamond shape */
+.card.diamond::before {
+  background-color: #9c27b0; /* Purple color */
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;

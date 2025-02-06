@@ -27,7 +27,7 @@ async function bootstrap() {
     },
     options: {
       partials: {
-        layout: 'layout.hbs',
+        layout: 'layout/layout.hbs',
       }
     },
     templates: join(__dirname, '..', 'views')

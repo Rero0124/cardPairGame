@@ -8,6 +8,6 @@ export class SettingController {
 
   @Get()
   settingPage(@Res() res: FastifyReply) {
-    return res.view('index', { message: '설정이에용', socket: 'setting' });
+    return res.view('setting', { message: '설정이에용', socket: 'setting' });
   }
 }

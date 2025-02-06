@@ -7,12 +7,17 @@ export class GameController {
   constructor(private readonly gameService: GameService) {}
 
   @Get('single')
-  singleMap(@Res() res: FastifyReply) {
-    return res.view('/index.hbs', { isMulti: false, socket: 'game' });
+  single(@Res() res: FastifyReply) {
+    return res.view('game', { isMulti: false, socket: 'game' });
   }
 
-  @Get('multi')
-  multiMap(@Res() res: FastifyReply) {
-    return res.view('/index.hbs', { isMulti: true });
+  @Get('room')
+  roomList(@Res() res: FastifyReply) {
+    return res.view('game', { isMulti: true });
+  }
+
+  @Get('room/:id')
+  room(@Res() res: FastifyReply) {
+    return res.view('game', { isMulti: true });
   }
 }

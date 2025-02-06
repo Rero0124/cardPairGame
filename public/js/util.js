@@ -1,5 +1,6 @@
-const config = {
+var config = {
   apiURL: 'http://localhost:3000/common',
+  loginURL: 'http://'
 };
 
 async function request(method, endpoint, data) {

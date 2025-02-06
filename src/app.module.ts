@@ -7,6 +7,7 @@ import { SettingModule } from './domain/setting/setting.module';
 import { ConfigModule } from '@nestjs/config';
 import appConfig from './config/app/app.config';
 import { CommonModule } from './domain/common/common.module';
+import { LoginModule } from './domain/login/login.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { CommonModule } from './domain/common/common.module';
     AppSocketModule, 
     GameModule, 
     SettingModule,
+    LoginModule,
     CommonModule
   ],
   controllers: [AppController],
